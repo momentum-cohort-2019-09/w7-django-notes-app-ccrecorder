@@ -1,0 +1,9 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+    <form method="POST"> {% csrf_token %}
+        {{ form.as_ul }}
+        <input type='submit' value="Create New Note"></input>
+    </form>
+    <p><a href='/'>Goin' Home</a></p>
+{% endblock %}
