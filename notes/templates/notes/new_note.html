@@ -3,7 +3,7 @@
 {% block content %}
     <form method="POST"> 
         {% csrf_token %}
-        {{ form.as_ul }}
+        {{ form.as_p }}
         <input type='submit' value="Create New Note"></input>
     </form>
     <p><a href='/'>Run Away</a></p>

@@ -13,3 +13,7 @@ class Note(models.Model):
     
     def __str__(self):
         return self.title
+
+    def update(self):
+        self.update_at = timezone.now()
+        self.save
