@@ -39,4 +39,5 @@ def notes_edit(request, pk):
         "form": form,
     })
 
-
+def note_delete(request, pk):
+    
