@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from notes.models import Note
 from notes.forms import NoteForm, SearchForm
+from django.utils import timezone
+
 
 
 
@@ -31,6 +33,7 @@ def notes_edit(request, pk):
     if request.method == 'POST':
         form = NoteForm(instance=note, data=request.POST)
         if form.is_valid():
+            note.updated_at = timezone.now()
             note = form.save()
             return redirect(to='notes_detail', pk= note.id)
     else:
